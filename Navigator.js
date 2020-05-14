@@ -9,6 +9,8 @@ import About from './screens/About'
 import One from './screens/1'
 import Two from './screens/2'
 import Three from './screens/3'
+import Four from './screens/4'
+import Five from './screens/5'
 
 const AboutNav = createStackNavigator({
   About:{
@@ -31,7 +33,9 @@ const AboutNav = createStackNavigator({
 const Inversions = createSwitchNavigator({
   One:One,
   Two:Two,
-  Three:Three
+  Three:Three,
+  Four:Four,
+  Five:Five
 },{
   defaultNavigationOptions:{
     title:'',
@@ -47,7 +51,8 @@ const AppNavigator = createStackNavigator({
     screen: Home,
     navigationOptions: {
       headerStyle:{
-        backgroundColor:'#a3e2f3'
+        backgroundColor:'#a3e2f3',
+        height:60
       },
       title: 'Choose Workout',
       headerTitleAlign: 'center',
@@ -60,7 +65,8 @@ const AppNavigator = createStackNavigator({
     screen:About,
     navigationOptions: {
       headerStyle:{
-        backgroundColor:'#a3e2f3'
+        backgroundColor:'#a3e2f3',
+        height:60
       },
       title: 'About',
       headerTitleAlign: 'center',
@@ -73,7 +79,8 @@ const AppNavigator = createStackNavigator({
     screen: Inversions,
     navigationOptions: {
      headerStyle:{
-      backgroundColor:'#be5ff4'
+      backgroundColor:'#be5ff4',
+      height:60
      },
       headerTitleAlign: 'center',
       headerTitleStyle: {

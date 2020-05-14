@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Everyday 60",
-    "slug": "yogaApp",
+    "slug": "everyday-60",
     "platforms": [
       "ios",
       "android",
@@ -9,9 +9,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/start.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/hecho.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }

@@ -16,7 +16,7 @@ import { Audio } from "expo-av";
   const soundObject =  new Audio.Sound() ;
   const loadAudio =  async () => {
     try {
-      await soundObject.loadAsync(require("../assets/audio/card3.mp3"));
+      await soundObject.loadAsync(require("../assets/audio/card4.mp3"));
       // await soundObject.playAsync();
       // Your sound is playing!
     } catch (error) {
@@ -39,13 +39,14 @@ import { Audio } from "expo-av";
     timeID = false
     setPlay(false)
   }
-  const playAudio = async () => {
-    await soundObject.playAsync()
+  const playAudio =  () => {
+     soundObject.playAsync()
+    // loadAudio();
      if(!timeID){
       timeID = setInterval(() => {
         countt++
         if(countt == 60){
-          navigation.navigate('Four')
+          navigation.navigate('Five')
           // countt = 0;
         }
       }, 1000);
@@ -56,7 +57,7 @@ import { Audio } from "expo-av";
   return (
     <View style={styles.container}>
 
-        <Image style={styles.img} source={require("../assets/cards/3.png")} />
+        <Image style={styles.img} source={require("../assets/cards/4.png")} />
         <View style={{flexDirection:'row',justifyContent:'space-around',width:'50%'}}>
         <View style={styles.btn}>
           <Button

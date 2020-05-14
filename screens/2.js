@@ -12,31 +12,44 @@ import { Audio } from "expo-av";
 
  function One({navigation}) {
   const [play, setPlay] = useState(false);
+  const [count, setCount] = useState(false);
   const soundObject =  new Audio.Sound() ;
-  const loadAudio = useCallback( async () => {
+  const loadAudio =  async () => {
     try {
       await soundObject.loadAsync(require("../assets/audio/card2.mp3"));
-      await soundObject.playAsync();
+      // await soundObject.playAsync();
       // Your sound is playing!
     } catch (error) {
       // An error occurred!
     } 
-  },[]);
+  }
 
+  let countt = 0;
+  let timeID = false
   
   useEffect(() => {
     loadAudio();
-    setTimeout(() => {
-      navigation.navigate('Three')
-    }, 60000);
-  }, );
+    // return () => soundObject.stopAsync();
+    return () => soundObject.unloadAsync()
+  },[] );
 
   const stopAudio = async () => {
     await soundObject.pauseAsync()
+    clearInterval(timeID)
+    timeID = false
     setPlay(false)
   }
-  const playAudio = async () => {
-    await soundObject.playAsync()
+  const playAudio =  () => {
+     soundObject.playAsync()
+     if(!timeID){
+      timeID = setInterval(() => {
+        countt++
+        if(countt == 60){
+          navigation.navigate('Three')
+          // countt = 0;
+        }
+      }, 1000);
+     }
   //  setPlay(true)
   }
 
@@ -83,4 +96,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default React.memo(One)
+export default One
