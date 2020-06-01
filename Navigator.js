@@ -4,6 +4,8 @@ import { createAppContainer,createSwitchNavigator } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 
+import InversionIntro from './screens/InversionIntro'
+
 import Home from './screens/Home'
 import About from './screens/About'
 import One from './screens/1'
@@ -11,6 +13,7 @@ import Two from './screens/2'
 import Three from './screens/3'
 import Four from './screens/4'
 import Five from './screens/5'
+
 
 const AboutNav = createStackNavigator({
   About:{
@@ -31,6 +34,7 @@ const AboutNav = createStackNavigator({
 })
 
 const Inversions = createSwitchNavigator({
+  InversionIntro:InversionIntro,
   One:One,
   Two:Two,
   Three:Three,
@@ -79,13 +83,13 @@ const AppNavigator = createStackNavigator({
     screen: Inversions,
     navigationOptions: {
      headerStyle:{
-      backgroundColor:'#be5ff4',
+      backgroundColor:'white',
       height:60
      },
       headerTitleAlign: 'center',
       headerTitleStyle: {
         fontWeight: 'bold',
-        color:'white'
+        color:'purple'
       }
     }
   },
